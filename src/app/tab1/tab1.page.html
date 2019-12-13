@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Notas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="todoForm" (ngSubmit)="addNote()">
+    <ion-item>
+      <ion-label>TODO</ion-label>
+      <ion-input type="text" formControlName="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>DESCRIPCION</ion-label>
+      <ion-textarea formControlName="description"></ion-textarea>
+    </ion-item>
+    <ion-button shape="round" color="primary" fill="solid" type="submit" [disabled]="!this.todoForm.valid">Agregar
+    </ion-button>
+  </form>
+
+
+  <ion-button (click)="turnFlash()" color="primary">Encender Flash</ion-button>
+
+  <ion-button (click)="ubication()" color="primary">Obtener Ubicación</ion-button>
+</ion-content>

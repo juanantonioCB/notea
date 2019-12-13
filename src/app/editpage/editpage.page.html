@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Editar Nota</ion-title>
+    <ion-button float-right (click)="close()" color="danger">Cerrar</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="todoForm" (ngSubmit)="editNote()">
+    <ion-item>
+      <ion-label>TODO</ion-label>
+      <ion-input type="text" formControlName="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>DESCRIPCION</ion-label>
+      <ion-textarea formControlName="description"></ion-textarea>
+    </ion-item>
+    <ion-button shape="round" color="primary" fill="solid" type="submit" [disabled]="!this.todoForm.valid">Editar Nota
+    </ion-button>
+  </form>
+
+</ion-content>
